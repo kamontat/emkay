@@ -68,7 +68,7 @@
       >
         <div class="container-fluid">
           <a class="navbar-brand" href="#" style="color: gray">
-            e<img src={logo} alt="Logo" width="80" height="60" />ay
+            <img src={logo} alt="Logo" width="80" height="60" />
           </a>
           <button
             class="navbar-toggler"
@@ -260,7 +260,7 @@
                             <div style="font-size: 15px;">
                               คะแนนปรับระดับสะสม <span
                                 class="txt-red"
-                                style="font-size: 20px;">{acc_points}</span
+                                style="font-size: 20px;">{(acc_points ?? 0).toLocaleString()}</span
                               >/1,200 คะแนน
                             </div>
                             <span style="font-size: 10px;">
