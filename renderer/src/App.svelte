@@ -435,7 +435,7 @@
         <div class="d-flex justify-content-center mt-2 gap-2 text-muted">
           <span
             ><a
-              href="https://github.com/narze/emkay/blob/main/scraper/data.json"
+              href="https://github.com/kamontat/emkay/blob/main/scraper/data.json"
               class="text-muted">data.json</a
             >
             updated at {format(new Date(updated_at), "HH:mm dd/MM/yyyy")} ({formatDistance(
