@@ -61,8 +61,7 @@
         captionText: pickTime,
       },
       (percentage, time, instance) => {
-        console.log({ percentage, time, instance })
-
+        // console.log({ percentage, time, instance })
         if (time.remaining <= 100) {
           instance.reset().start()
         }
