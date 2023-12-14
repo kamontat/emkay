@@ -3,6 +3,7 @@
   import upDiamond from "./assets/up_diamond.png"
   import Card from "./lib/Card.svelte"
   import bg from "./assets/bg.png"
+  import addnew from './assets/addnew.png'
   import data from "../../scraper/data.json"
   import format from "date-fns/format"
   import formatDistance from "date-fns/formatDistance"
@@ -354,7 +355,7 @@
                       <div class="avatar mx-auto">
                         <a href="#products">
                           <img
-                            src="./mymk_files/addnew.png"
+                            src={addnew}
                             class="img-fluid"
                           />
                         </a>
