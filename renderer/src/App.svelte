@@ -1,62 +1,37 @@
 <script lang="ts">
-  import logo from "./assets/logo.png"
-  import upDiamond from "./assets/up_diamond.png"
-  import Card from "./lib/Card.svelte"
-  import bg from "./assets/bg.png"
-  import addnew from './assets/addnew.png'
-  import data from "../../scraper/data.json"
-  import format from "date-fns/format"
-  import formatDistance from "date-fns/formatDistance"
-  import { onMount } from "svelte"
+  import logo from "./assets/logo.png";
+  import upDiamond from "./assets/up_diamond.png";
+  import Card from "./lib/Card.svelte";
+  import bg from "./assets/bg.png";
+  import addnew from "./assets/addnew.png";
+  import data from "../../scraper/data.json";
+  import format from "date-fns/format";
+  import formatDistance from "date-fns/formatDistance";
+  import { onMount } from "svelte";
 
-  const {
-    acc_points,
-    redeemable_points,
-    card_number,
-    expire_date,
-    name,
-    today_points,
-    updated_at,
-  } = data
+  const { acc_points, redeemable_points, card_number, expire_date, name, today_points, updated_at } = data;
 
-  const expire_date_display = format(new Date(expire_date), "dd/MM/yyyy")
-  const progress = Math.min(Math.round((acc_points / 1200) * 100), 100)
-  let hide = false
-
-  function showData() {
-    alert(JSON.stringify(data, null, 2))
-  }
+  const expire_date_display = format(new Date(expire_date), "dd/MM/yyyy");
+  const progress = Math.min(Math.round((acc_points / 1200) * 100), 100);
+  let hide = false;
 
   onMount(() => {
-    if (window.location.href.match(/emkay\.vercel/)) {
-      hide = true
-      alert("ย้ายเว็บแล้ว โปรดถามใน Facebook Messenger นะจ๊ะ")
-      window.location.href = "https://m.me/narze?text=ขอเว็บ%20emkay%20ใหม่"
-    } else {
-      motd()
-    }
-  })
+    howto();
+  });
 
-  function motd() {
-    const key = "emkay-motd"
-
-    let currentDate = new Date().toDateString()
-
-    let lastAlertDate = localStorage.getItem(key)
-
+  function howto() {
+    const key = "emkay-howto";
+    let currentDate = new Date().toDateString();
+    let lastAlertDate = localStorage.getItem(key);
     if (lastAlertDate !== currentDate) {
-      const message = [
-        "วิธีใช้งาน",
-        "1. คลิกที่บัตรสมาชิก",
-        "2. โชว์ QR Code ให้พนักงานสแกน",
-        "3. รับส่วนลด",
-      ].join("\n")
+      const message = ["วิธีใช้งาน", "1. คลิกที่บัตรสมาชิก", "2. โชว์ QR Code ให้พนักงานสแกน", "3. รับส่วนลด"].join(
+        "\n"
+      );
 
-      localStorage.setItem(key, currentDate)
-
+      localStorage.setItem(key, currentDate);
       setTimeout(() => {
-        alert(message)
-      }, 1000)
+        alert(message);
+      }, 1000);
     }
   }
 </script>
@@ -64,11 +39,9 @@
 {#if !hide}
   <main class="stretched bg-white">
     <header>
-      <nav
-        class="navbar navbar-light bg-white fixed-top navbar-expand-md bottom-shadow"
-      >
+      <nav class="navbar navbar-light bg-white fixed-top navbar-expand-md bottom-shadow">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#" style="color: gray">
+          <a class="navbar-brand" href="/" style="color: gray">
             <img src={logo} alt="Logo" width="80" height="60" />
           </a>
           <button
@@ -87,70 +60,39 @@
             aria-labelledby="offcanvasNavbarLabel"
           >
             <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel" />
-              <button
-                type="button"
-                class="btn-close text-reset"
-                data-bs-dismiss="offcanvas"
-                aria-label="Close"
-              />
+              <span class="offcanvas-title" id="offcanvasNavbarLabel" />
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close" />
             </div>
             <div class="offcanvas-body">
-              <ul
-                class="navbar-nav justify-content-end flex-grow-1 pe-3 text-center"
-              >
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 text-center">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#th/home"
-                    >หน้าแรก</a
-                  >
+                  <a class="nav-link active" aria-current="page" href="#th/home">หน้าแรก</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#th/profile">ข้อมูลส่วนตัว</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#th/order-history"
-                    >ประวัติการซื้อบัตรสมาชิก</a
-                  >
+                  <a class="nav-link" href="#th/order-history">ประวัติการซื้อบัตรสมาชิก</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#th/change-password"
-                    >เปลี่ยนรหัสผ่าน</a
-                  >
+                  <a class="nav-link" href="#th/change-password">เปลี่ยนรหัสผ่าน</a>
                 </li>
                 <li class="nav-item">
-                  <a
-                    class="nav-link"
-                    href="https://www.mkrestaurant.com/th/card"
-                    target="_blank">ประเภทบัตรสมาชิก MK</a
+                  <a class="nav-link" href="https://www.mkrestaurant.com/th/card" target="_blank">ประเภทบัตรสมาชิก MK</a
                   >
                 </li>
 
                 <li class="nav-item d-block d-sm-none d-sm-block d-md-none">
-                  <a class="nav-link" aria-current="page" href="#th/contact"
-                    >ติดต่อเรา</a
-                  >
+                  <a class="nav-link" aria-current="page" href="#th/contact">ติดต่อเรา</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="#th/logout"
-                    >ลงชื่อออก</a
-                  >
-                  <form
-                    id="logout-form"
-                    action="#th/logout"
-                    method="POST"
-                    class="d-none"
-                  >
-                    <input
-                      type="hidden"
-                      name="_token"
-                      value="s1FyH3i7F6g5zr8Hm7BLw63SRJUqZO28TCi7ZMTC"
-                    />
+                  <a class="nav-link" aria-current="page" href="#th/logout">ลงชื่อออก</a>
+                  <form id="logout-form" action="#th/logout" method="POST" class="d-none">
+                    <input name="_token" type="hidden" value="s1FyH3i7F6g5zr8Hm7BLw63SRJUqZO28TCi7ZMTC" />
                   </form>
                 </li>
 
-                <li
-                  class="nav-item d-block d-sm-none d-sm-block d-md-none d-flex justify-content-center py-5"
-                >
+                <li class="nav-item d-block d-sm-none d-sm-block d-md-none d-flex justify-content-center py-5">
                   <div class="col-2">
                     <hr style="height: 2px; margin:0px;" />
                   </div>
@@ -192,12 +134,7 @@
                   aria-current="true"
                   aria-label="Slide 1"
                 />
-                <button
-                  type="button"
-                  data-bs-target="#carouselCard"
-                  data-bs-slide-to="1"
-                  aria-label="Slide 2"
-                />
+                <button type="button" data-bs-target="#carouselCard" data-bs-slide-to="1" aria-label="Slide 2" />
               </div>
               <div class="carousel-inner">
                 <div class="carousel-item w-100 active">
@@ -219,23 +156,15 @@
 
                           <div class="row d-flex justify-content-center mt-1">
                             <div class="col-12" style="font-size:12px;">
-                              <label>MAINTAIN</label>
+                              <span>MAINTAIN</span>
                             </div>
                             <div class="col-12">
                               <h6 class="fw-bold">MK DIAMOND CARD</h6>
                             </div>
 
-                            <div
-                              class="row g-1 d-flex justify-content-center"
-                              style="margin-top:-12px;"
-                            >
-                              <div
-                                class="col-7 col-md-4 col-lg-3 col-xl-2 my-auto"
-                              >
-                                <div
-                                  class="progress"
-                                  style="height: 10px;background-color: #c2c2c2;"
-                                >
+                            <div class="row g-1 d-flex justify-content-center" style="margin-top:-12px;">
+                              <div class="col-7 col-md-4 col-lg-3 col-xl-2 my-auto">
+                                <div class="progress" style="height: 10px;background-color: #c2c2c2;">
                                   <div
                                     class="progress-bar bg-danger"
                                     role="progressbar"
@@ -249,24 +178,18 @@
                                 </div>
                               </div>
                               <div class="col-auto">
-                                <img src={upDiamond} width="80" />
+                                <img src={upDiamond} alt="upgrade to diamond" width="80" />
                               </div>
                             </div>
                           </div>
 
-                          <div
-                            class="row d-flex justify-content-center"
-                            style="margin-top:-10px;"
-                          >
+                          <div class="row d-flex justify-content-center" style="margin-top:-10px;">
                             <div style="font-size: 15px;">
-                              คะแนนปรับระดับสะสม <span
-                                class="txt-red"
-                                style="font-size: 20px;">{(acc_points ?? 0).toLocaleString()}</span
+                              คะแนนปรับระดับสะสม <span class="txt-red" style="font-size: 20px;"
+                                >{(acc_points ?? 0).toLocaleString()}</span
                               >/1,200 คะแนน
                             </div>
-                            <span style="font-size: 10px;">
-                              สะสมภายใน {expire_date_display}</span
-                            >
+                            <span style="font-size: 10px;"> สะสมภายใน {expire_date_display}</span>
                           </div>
                           <div class="row d-flex justify-content-center">
                             <div class="col-md-3 col-10">
@@ -279,21 +202,14 @@
                           </div>
                           <ul class="list-inline mt-3">
                             <li class="list-inline-item p-divider">
-                              <a href="#my-coupon" class="h5 text-success"
-                                >คูปองของฉัน
-                              </a>
+                              <a href="#my-coupon" class="h5 text-success">คูปองของฉัน </a>
                             </li>
                             <li class="list-inline-item">
-                              <a href="#redeem" class="h5 text-success"
-                                >แลกคะแนนสะสม
-                              </a>
+                              <a href="#redeem" class="h5 text-success">แลกคะแนนสะสม </a>
                             </li>
                           </ul>
 
-                          <div
-                            class="mx-auto detail-profile"
-                            style="width: 20rem; font-size:13px;"
-                          >
+                          <div class="mx-auto detail-profile" style="width: 20rem; font-size:13px;">
                             <div class="text-start mx-1 my-2">
                               <div style="margin-left:8px;">
                                 หมายเลขบัตรสมาชิก: <span class="txt-red">
@@ -312,7 +228,7 @@
                               </div>
                               <div style="margin-left:8px;">
                                 คะแนนแลกของรางวัล: <span class="txt-red">
-                                  {redeemable_points}
+                                  {(redeemable_points ?? 0).toLocaleString()}
                                 </span> คะแนน
                               </div>
                               <div style="margin-left:8px;color: #737373;">
@@ -324,23 +240,11 @@
                             </div>
                           </div>
 
-                          <div
-                            class="row d-flex justify-content-center g-2 mt-2 mb-4"
-                          >
-                            <a
-                              class="btn btn-back"
-                              href="#profile"
-                              style="margin-right: 5px;"
-                            >
-                              แก้ไขข้อมูลส่วนตัว
-                            </a>
-                            <button
-                              class="btn btn-back history"
-                              style="margin-right: 5px;"
-                              on:click={showData}
-                            >
+                          <div class="row d-flex justify-content-center g-2 mt-2 mb-4">
+                            <a class="btn btn-back" href="#profile" style="margin-right: 5px;"> แก้ไขข้อมูลส่วนตัว </a>
+                            <a class="btn btn-back history" style="margin-right: 5px;" href="#history">
                               ประวัติการใช้งาน
-                            </button>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -354,10 +258,7 @@
                     <div class="card loginfm shadow-sm card-radius" id="card">
                       <div class="avatar mx-auto">
                         <a href="#products">
-                          <img
-                            src={addnew}
-                            class="img-fluid"
-                          />
+                          <img src={addnew} alt="add new card" class="img-fluid" />
                         </a>
                       </div>
                       <div style="height:500px;" />
@@ -366,21 +267,11 @@
                 </div>
               </div>
 
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselCard"
-                data-bs-slide="prev"
-              >
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselCard" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true" />
                 <span class="visually-hidden">Previous</span>
               </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselCard"
-                data-bs-slide="next"
-              >
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselCard" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true" />
                 <span class="visually-hidden">Next</span>
               </button>
@@ -400,19 +291,17 @@
       <div class="container">
         <div class="footer-font">
           <div class="d-flex justify-content-center mt-2">
-            <label>ติดต่อ MK Call Center 02-066-1000</label>
+            <span>ติดต่อ MK Call Center 02-066-1000</span>
           </div>
           <div class="d-flex justify-content-center mt-1">
-            <label>จันทร์-ศุกร์: 08:00-21.00 น.</label>
+            <span>จันทร์-ศุกร์: 08:00-21.00 น.</span>
           </div>
           <div class="d-flex justify-content-center mt-1">
-            <label>เสาร์-อาทิตย์ และวันหยุดนักขัตฤกษ์: 10:00-21.00 น.</label>
+            <span>เสาร์-อาทิตย์ และวันหยุดนักขัตฤกษ์: 10:00-21.00 น.</span>
           </div>
           <div class="row text-center">
             <div class="col-12 mt-1">
-              <a href="#term-conditions" target="_blank"
-                >ข้อกำหนดและเงื่อนไขสำหรับเว็บไซต์</a
-              >
+              <a href="#term-conditions" target="_blank">ข้อกำหนดและเงื่อนไขสำหรับเว็บไซต์</a>
             </div>
             <div class="col-12 mt-1">
               <a
@@ -427,18 +316,13 @@
               > &nbsp;&nbsp;
             </div>
             <div class="col-12 mt-1">
-              <a href="#DataAccessRequest"
-                >แบบฟอร์มการขอใช้สิทธิของเจ้าของข้อมูลส่วนบุคคล</a
-              >
+              <a href="#DataAccessRequest">แบบฟอร์มการขอใช้สิทธิของเจ้าของข้อมูลส่วนบุคคล</a>
             </div>
           </div>
         </div>
         <div class="d-flex justify-content-center mt-2 gap-2 text-muted">
           <span
-            ><a
-              href="https://github.com/kamontat/emkay/blob/main/scraper/data.json"
-              class="text-muted">data.json</a
-            >
+            ><a href="https://github.com/kamontat/emkay/blob/main/scraper/data.json" class="text-muted">data.json</a>
             updated at {format(new Date(updated_at), "HH:mm dd/MM/yyyy")} ({formatDistance(
               new Date(updated_at),
               new Date(),
