@@ -299,7 +299,7 @@
       <div class="footer-font">
         <div class="d-flex justify-content-center mt-2">
           <span>
-            ติดต่อ <MultitapButton times={3} on:multitap={() => (isDebug = true)}>MK</MultitapButton> Call Center 02-066-1000
+            ติดต่อ <MultitapButton times={3} on:multitap={() => (isDebug = !isDebug)}>MK</MultitapButton> Call Center 02-066-1000
           </span>
         </div>
         <div class="d-flex justify-content-center mt-1">
