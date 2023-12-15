@@ -112,12 +112,12 @@
   <div class="flip-card-inner">
     <div class="flip-card-front">
       <div class="avatar mx-auto">
-        <img src={cardDiamond} alt="diamond card" class="img-fluid" />
+        <img id="flip-front" src={cardDiamond} alt="diamond card" class="img-fluid" />
       </div>
     </div>
     <div class="flip-card-back">
       <div class="avatar mx-auto back-card">
-        <img src={cardBackside} alt="card back side" class="img-fluid" />
+        <img id="flip-back" src={cardBackside} alt="card back side" class="img-fluid" />
 
         <div class="d-none d-md-block">
           <div class="row" style="position: relative;bottom: 270px;">
