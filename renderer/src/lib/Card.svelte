@@ -12,11 +12,12 @@
 
   let countdown: HTMLElement, countdown2: HTMLElement
   let ct: CanvasCircularCountdown, ct2: CanvasCircularCountdown
-  let timestamp = new Date()
+  
 
   const { acc_points, card_number, expire_date, name, today_points } = data
   const DURATION = 100
 
+  $: timestamp = new Date()
   $: timestamp_formatted = format(timestamp, "yyyy-MM-dd HH:mm:ss")
   $: timestamp_display = format(timestamp, "HH:mm dd/MM/yyyy")
 
@@ -28,6 +29,7 @@
     card.classList.toggle("flipped")
 
     if (card.classList.contains("flipped")) {
+      timestamp = new Date()
       ct.reset().start()
       ct2.reset().start()
     } else {
