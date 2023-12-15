@@ -1,6 +1,8 @@
 /// <reference types="svelte" />
 /// <reference types="vite/client" />
 
+// NOTE: System Environment https://vercel.com/docs/projects/environment-variables/system-environment-variables
+
 interface ImportMetaEnv {
   /** The Environment that the app is deployed and running on. The value can be either production, preview, or development. */
   readonly VITE_VERCEL_ENV: string;

@@ -4,16 +4,16 @@
   import Card from "./lib/Card.svelte";
   import bg from "./assets/bg.png";
   import addnew from "./assets/addnew.png";
-  import data from "../../scraper/data.json";
+  import { acc_points, redeemable_points, card_number, expire_date, name, today_points } from "../../scraper/data.json";
   import format from "date-fns/format";
-  import formatDistance from "date-fns/formatDistance";
   import { onMount } from "svelte";
-
-  const { acc_points, redeemable_points, card_number, expire_date, name, today_points, updated_at } = data;
+  import MultitapButton from "./lib/MultitapButton.svelte";
+  import DebugView from "./lib/DebugView.svelte";
 
   const expire_date_display = format(new Date(expire_date), "dd/MM/yyyy");
   const progress = Math.min(Math.round((acc_points / 1200) * 100), 100);
   let hide = false;
+  let isDebug = false;
 
   onMount(() => {
     howto();
@@ -291,7 +291,9 @@
       <div class="container">
         <div class="footer-font">
           <div class="d-flex justify-content-center mt-2">
-            <span>ติดต่อ MK Call Center 02-066-1000</span>
+            <span>
+              ติดต่อ <MultitapButton times={3} on:multitap={() => (isDebug = true)}>MK</MultitapButton> Call Center 02-066-1000
+            </span>
           </div>
           <div class="d-flex justify-content-center mt-1">
             <span>จันทร์-ศุกร์: 08:00-21.00 น.</span>
@@ -320,19 +322,10 @@
             </div>
           </div>
         </div>
-        <!-- <div class="d-flex justify-content-center mt-2 gap-2 text-muted">
-          <span
-            ><a href="https://github.com/kamontat/emkay/blob/main/scraper/data.json" class="text-muted">data.json</a>
-            updated at {format(new Date(updated_at), "HH:mm dd/MM/yyyy")} ({formatDistance(
-              new Date(updated_at),
-              new Date(),
-              {
-                addSuffix: true,
-              }
-            )})</span
-          >
-        </div> -->
       </div>
     </footer>
+    {#if isDebug}
+      <DebugView />
+    {/if}
   </main>
 {/if}
