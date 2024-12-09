@@ -33,26 +33,6 @@
       title += " (debug)";
     }
   }
-
-  onMount(() => {
-    howto();
-  });
-
-  function howto() {
-    const key = "emkay-howto";
-    let currentDate = new Date().toDateString();
-    let lastAlertDate = localStorage.getItem(key);
-    if (lastAlertDate !== currentDate) {
-      const message = ["วิธีใช้งาน", "1. คลิกที่บัตรสมาชิก", "2. โชว์ QR Code ให้พนักงานสแกน", "3. รับส่วนลด"].join(
-        "\n"
-      );
-
-      localStorage.setItem(key, currentDate);
-      setTimeout(() => {
-        alert(message);
-      }, 1000);
-    }
-  }
 </script>
 
 <svelte:head>
