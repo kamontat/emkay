@@ -27,6 +27,10 @@ def get_card_data(page)
   card_number, expire_date, today_points, redeemable_points = page.query_selector_all('.detail-profile .txt-red').map(&:inner_text).map(&:strip)
   acc_points = page.get_by_text("คะแนนปรับระดับสะสม").locator(".txt-red").first.inner_text
 
+  raw_points_expire = page.get_by_text("วันหมดอายุ (คะแนนแลกของรางวัล)").locator(".ms-5").first.inner_text
+  points_expire = raw_points_expire.scan(/\d+/)[0].to_i
+  points_expire_date = Date.parse(raw_points_expire.scan(/\d{2}\/\d{2}\/\d{4}/)[0])
+
   {
     name:,
     card_number:,
@@ -34,6 +38,8 @@ def get_card_data(page)
     today_points: today_points.gsub(',', '').to_i,
     redeemable_points: redeemable_points.gsub(',', '').to_i,
     acc_points: acc_points.gsub(',', '').to_i,
+    points_expire: points_expire,
+    points_expire_date: points_expire_date,
   }
 end
 
