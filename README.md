@@ -15,7 +15,7 @@ This component will scrape data from website and save as json (**data.json**).
 
 1. Move directory to **scraper**
 2. Run `bundle install` to install dependencies (only first time)
-3. Run `npx playwright install` to install playwright (only first time)
+3. Run `npx playwright install chromium chromium-headless-shell` to install playwright (only first time)
 4. Run scraper by `ruby main.rb`
 
 ```bash
