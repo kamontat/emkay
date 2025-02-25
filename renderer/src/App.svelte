@@ -326,7 +326,7 @@
         </div>
       </div>
       <div class="d-flex justify-content-center footer-font mt-2">
-        <span>© 2019 <MultitapButton times={3} on:multitap={() => (isDebug = !isDebug)}>MK</MultitapButton> Restaurants Group PCL., All rights reserved.</span>
+        <span>© 2019 <MultitapButton times={2} on:multitap={() => (isDebug = !isDebug)}>MK</MultitapButton> Restaurants Group PCL., All rights reserved.</span>
       </div>
     </div>
   </footer>
