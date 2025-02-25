@@ -28,14 +28,13 @@ jobs:
         with:
           bundler-cache: true
           working-directory: ./scraper
-      - name: Setup Playwright
+      - name: Set up Playwright
         run: npx playwright install chromium-headless-shell
       - name: Scrape
+        run: ruby main.rb
         env:
           MK_USERNAME: ${{ secrets.MK_USERNAME }}
           MK_PASSWORD: ${{ secrets.MK_PASSWORD }}
-        run: ruby main.rb
-
       - name: Commit and push
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
