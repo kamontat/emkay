@@ -10,23 +10,29 @@
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^2.4.2",
+    "@sveltejs/vite-plugin-svelte": "^2.5.3",
     "@tsconfig/svelte": "^5.0.4",
     "canvas-circular-countdown": "^1.8.0",
-    "svelte": "^4.0.5",
-    "svelte-check": "^3.4.6",
+    "svelte": "^4.2.19",
+    "svelte-check": "^3.8.6",
     "tslib": "^2.8.1",
-    "typescript": "^5.7.2",
-    "vite": "^4.4.5"
+    "typescript": "^5.7.3",
+    "vite": "^4.5.9"
   },
   "dependencies": {
-    "@vercel/analytics": "^1.4.1",
-    "@vercel/speed-insights": "^1.1.0",
+    "@vercel/analytics": "^1.5.0",
+    "@vercel/speed-insights": "^1.2.0",
     "date-fns": "^2.30.0",
     "qrcode": "^1.5.4"
   },
   "engines": {
-    "node": ">=20 <21"
+    "node": ">=22 <23"
   },
-  "packageManager": "pnpm@9.15.0+sha256.09a8fe31a34fda706354680619f4002f4ccef6dadff93240d24ef6c831f0fd28"
+  "packageManager": "pnpm@10.4.1+sha512.c753b6c3ad7afa13af388fa6d808035a008e30ea9993f58c6663e2bc5ff21679aa834db094987129aa4d488b86df57f7b634981b2f827cdcacc698cc0cfb88af",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@vercel/speed-insights",
+      "svelte-preprocess"
+    ]
+  }
 }
