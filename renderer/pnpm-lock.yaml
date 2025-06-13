@@ -23,7 +23,7 @@ importers:
     devDependencies:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^2.5.3
-        version: 2.5.3(svelte@4.2.20)(vite@4.5.9)
+        version: 2.5.3(svelte@4.2.20)(vite@4.5.14)
       '@tsconfig/svelte':
         specifier: ^5.0.4
         version: 5.0.4
@@ -43,8 +43,8 @@ importers:
         specifier: ^5.8.3
         version: 5.8.3
       vite:
-        specifier: ^4.5.9
-        version: 4.5.9
+        specifier: ^4.5.14
+        version: 4.5.14
 
 packages:
 
@@ -411,8 +411,8 @@ packages:
   ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
 
-  nanoid@3.3.6:
-    resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
+  nanoid@3.3.11:
+    resolution: {integrity: sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
@@ -442,8 +442,8 @@ packages:
     resolution: {integrity: sha512-40QW5YalBNfQo5yRYmiw7Yz6TKKVr3h6970B2YE+3fQpsWcrbj1PzJgxeJ19DRQjhMbKPIuMY8rFaXc8moolVw==}
     engines: {node: '>=10.13.0'}
 
-  postcss@8.4.31:
-    resolution: {integrity: sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==}
+  postcss@8.5.4:
+    resolution: {integrity: sha512-QSa9EBe+uwlGTFmHsPKokv3B/oEMQZxfqW0QqNCyhpa6mB1afzulwn8hihglqAb2pOw+BJgNlmXQ8la2VeHB7w==}
     engines: {node: ^10 || ^12 || >=14}
 
   qrcode@1.5.4:
@@ -462,8 +462,8 @@ packages:
   require-main-filename@2.0.0:
     resolution: {integrity: sha512-NKN5kMDylKuldxYLSUfrbo5Tuzh4hd+2E8NPPX02mZtn1VuREQToYe/ZdlJy+J3uCpfaiGF05e7B8W0iXbQHmg==}
 
-  rollup@3.29.4:
-    resolution: {integrity: sha512-oWzmBZwvYrU0iJHtDmhsm662rC15FRXmcjCk1xD771dFDx5jJ02ufAQQTn0etB2emNk4J9EZg/yWKpsn9BWGRw==}
+  rollup@3.29.5:
+    resolution: {integrity: sha512-GVsDdsbJzzy4S/v3dqWPJ7EfvZJfCHiDqe80IyrF59LYuP+e6U1LJoUqeuqRbwAWoMNoXivMNeNAOf5E22VA1w==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
 
@@ -473,10 +473,6 @@ packages:
 
   set-blocking@2.0.0:
     resolution: {integrity: sha512-KiKBS8AnWGEyLzofFfmvKwpdPzqiy16LvQfK3yv/fVH7Bj13/wl3JSR1J+rfgRE9q7xUJK4qvgS8raSOeLUehw==}
-
-  source-map-js@1.0.2:
-    resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
-    engines: {node: '>=0.10.0'}
 
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
@@ -516,8 +512,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  vite@4.5.9:
-    resolution: {integrity: sha512-qK9W4xjgD3gXbC0NmdNFFnVFLMWSNiR3swj957yutwzzN16xF/E7nmtAyp1rT9hviDroQANjE4HK3H4WqWdFtw==}
+  vite@4.5.14:
+    resolution: {integrity: sha512-+v57oAaoYNnO3hIu5Z/tJRZjq5aHM2zDve9YZ8HngVHbhk66RStobhb1sqPMIPEleV6cNKYK4eGrAbE9Ulbl2g==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -660,26 +656,26 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@sveltejs/vite-plugin-svelte-inspector@1.0.4(@sveltejs/vite-plugin-svelte@2.5.3(svelte@4.2.20)(vite@4.5.9))(svelte@4.2.20)(vite@4.5.9)':
+  '@sveltejs/vite-plugin-svelte-inspector@1.0.4(@sveltejs/vite-plugin-svelte@2.5.3(svelte@4.2.20)(vite@4.5.14))(svelte@4.2.20)(vite@4.5.14)':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 2.5.3(svelte@4.2.20)(vite@4.5.9)
+      '@sveltejs/vite-plugin-svelte': 2.5.3(svelte@4.2.20)(vite@4.5.14)
       debug: 4.3.4
       svelte: 4.2.20
-      vite: 4.5.9
+      vite: 4.5.14
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte@2.5.3(svelte@4.2.20)(vite@4.5.9)':
+  '@sveltejs/vite-plugin-svelte@2.5.3(svelte@4.2.20)(vite@4.5.14)':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 1.0.4(@sveltejs/vite-plugin-svelte@2.5.3(svelte@4.2.20)(vite@4.5.9))(svelte@4.2.20)(vite@4.5.9)
+      '@sveltejs/vite-plugin-svelte-inspector': 1.0.4(@sveltejs/vite-plugin-svelte@2.5.3(svelte@4.2.20)(vite@4.5.14))(svelte@4.2.20)(vite@4.5.14)
       debug: 4.3.4
       deepmerge: 4.3.1
       kleur: 4.1.5
       magic-string: 0.30.5
       svelte: 4.2.20
       svelte-hmr: 0.15.3(svelte@4.2.20)
-      vite: 4.5.9
-      vitefu: 0.2.5(vite@4.5.9)
+      vite: 4.5.14
+      vitefu: 0.2.5(vite@4.5.14)
     transitivePeerDependencies:
       - supports-color
 
@@ -823,7 +819,7 @@ snapshots:
 
   ms@2.1.2: {}
 
-  nanoid@3.3.6: {}
+  nanoid@3.3.11: {}
 
   p-limit@2.3.0:
     dependencies:
@@ -847,11 +843,11 @@ snapshots:
 
   pngjs@5.0.0: {}
 
-  postcss@8.4.31:
+  postcss@8.5.4:
     dependencies:
-      nanoid: 3.3.6
+      nanoid: 3.3.11
       picocolors: 1.1.1
-      source-map-js: 1.0.2
+      source-map-js: 1.2.1
 
   qrcode@1.5.4:
     dependencies:
@@ -865,7 +861,7 @@ snapshots:
 
   require-main-filename@2.0.0: {}
 
-  rollup@3.29.4:
+  rollup@3.29.5:
     optionalDependencies:
       fsevents: 2.3.3
 
@@ -874,8 +870,6 @@ snapshots:
       mri: 1.2.0
 
   set-blocking@2.0.0: {}
-
-  source-map-js@1.0.2: {}
 
   source-map-js@1.2.1: {}
 
@@ -926,17 +920,17 @@ snapshots:
 
   typescript@5.8.3: {}
 
-  vite@4.5.9:
+  vite@4.5.14:
     dependencies:
       esbuild: 0.18.20
-      postcss: 8.4.31
-      rollup: 3.29.4
+      postcss: 8.5.4
+      rollup: 3.29.5
     optionalDependencies:
       fsevents: 2.3.3
 
-  vitefu@0.2.5(vite@4.5.9):
+  vitefu@0.2.5(vite@4.5.14):
     optionalDependencies:
-      vite: 4.5.9
+      vite: 4.5.14
 
   which-module@2.0.1: {}
 
