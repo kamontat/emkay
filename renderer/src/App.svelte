@@ -25,26 +25,25 @@
   );
   const progress = Math.min(Math.round((acc_points / 1200) * 100), 100);
 
-  let title = "MyMK";
-  let isDebug = false;
+  const _title = "MyMK หน้าแรก";
+  let title = $state("");
+  let isDebug = $state(false);
 
   const mode = import.meta.env.MODE;
   const env = import.meta.env.VITE_VERCEL_ENV;
 
-  $: {
+  $effect(() => {
     if (mode === "production" && env === "production") {
-      title = "MyMK หน้าแรก";
+      title = _title;
     } else if (mode === "production") {
-      // PS - Production staging
-      title = "MyMK STG";
+      title = `[${env}] ` + _title;
     } else {
-      title = "MyMK DEV";
+      title = `[${mode}] ` + _title;
     }
-
     if (isDebug) {
       title += " (debug)";
     }
-  }
+  });
 </script>
 
 <svelte:head>
@@ -58,7 +57,7 @@
     >
       <div class="container-fluid">
         <a class="navbar-brand" href="/" style="color: gray">
-          <img src={logo} alt="Logo" width="80" height="60" />
+          <img src={logo} alt="Logo" width="80" height="60" aria-label="Logo" />
         </a>
         <button
           class="navbar-toggler"
@@ -66,8 +65,9 @@
           data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasNavbar"
           aria-controls="offcanvasNavbar"
+          aria-label="Toggle icon"
         >
-          <span class="navbar-toggler-icon" />
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div
           class="offcanvas offcanvas-end"
@@ -76,13 +76,13 @@
           aria-labelledby="offcanvasNavbarLabel"
         >
           <div class="offcanvas-header">
-            <span class="offcanvas-title" id="offcanvasNavbarLabel" />
+            <span class="offcanvas-title" id="offcanvasNavbarLabel"></span>
             <button
               type="button"
               class="btn-close text-reset"
               data-bs-dismiss="offcanvas"
               aria-label="Close"
-            />
+            ></button>
           </div>
           <div class="offcanvas-body">
             <ul
@@ -180,18 +180,18 @@
                 class="active"
                 aria-current="true"
                 aria-label="Slide 1"
-              />
+              ></button>
               <button
                 type="button"
                 data-bs-target="#carouselCard"
                 data-bs-slide-to="1"
                 aria-label="Slide 2"
-              />
+              ></button>
             </div>
             <div class="carousel-inner">
               <div class="carousel-item w-100 active">
                 <div class="row text-center">
-                  <div class="area1" />
+                  <div class="area1"></div>
                   <div class="card loginfm shadow-sm card-radius" id="card">
                     <Card />
                     <div>
@@ -344,7 +344,7 @@
 
               <div class="carousel-item w-100">
                 <div class="row text-center">
-                  <div class="area1" />
+                  <div class="area1"></div>
                   <div class="card loginfm shadow-sm card-radius" id="card">
                     <div class="avatar mx-auto">
                       <a href="#products">
@@ -355,7 +355,7 @@
                         />
                       </a>
                     </div>
-                    <div style="height:500px;" />
+                    <div style="height:500px;"></div>
                   </div>
                 </div>
               </div>
@@ -367,7 +367,8 @@
               data-bs-target="#carouselCard"
               data-bs-slide="prev"
             >
-              <span class="carousel-control-prev-icon" aria-hidden="true" />
+              <span class="carousel-control-prev-icon" aria-hidden="true"
+              ></span>
               <span class="visually-hidden">Previous</span>
             </button>
             <button
@@ -376,14 +377,15 @@
               data-bs-target="#carouselCard"
               data-bs-slide="next"
             >
-              <span class="carousel-control-next-icon" aria-hidden="true" />
+              <span class="carousel-control-next-icon" aria-hidden="true"
+              ></span>
               <span class="visually-hidden">Next</span>
             </button>
           </div>
           <!-- End carouselCard-->
         </div>
       </div>
-      <div id="history" />
+      <div id="history"></div>
     </div>
   </main>
   <footer class="footer mt-auto pb-2">

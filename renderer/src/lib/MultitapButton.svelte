@@ -1,10 +1,15 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
 
-  /** how many times for multitap event to execute */
-  export let times;
-  /** max time different in milliseconds each click need to be */
-  export let delay = 450;
+  interface Props {
+    /** how many times for multitap event to execute */
+    times: number;
+    /** max time different in milliseconds each click need to be */
+    delay?: number;
+    children?: import('svelte').Snippet;
+  }
+
+  let { times, delay = 450, children }: Props = $props();
 
   const EVENT_MULTITAP_NAME = "multitap";
   const EVENT_RESET_NAME = "reset";
@@ -39,4 +44,4 @@
   };
 </script>
 
-<button class="reset" on:click={clickHandler}><slot /></button>
+<button class="reset" onclick={clickHandler}>{@render children?.()}</button>

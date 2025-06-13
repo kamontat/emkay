@@ -10,18 +10,22 @@
   import duckJump from "../assets/duck_jump.gif";
   import data from "../../../scraper/data.json";
 
-  let countdown: HTMLElement, countdown2: HTMLElement;
+  let countdown: HTMLElement = $state();
+  let countdown2: HTMLElement = $state();
   let ct: CanvasCircularCountdown, ct2: CanvasCircularCountdown;
 
   const { card_number, expire_date } = data;
   const DURATION = 100;
 
-  $: isFlip = false;
-  $: timestamp = new Date();
-  $: timestamp_formatted = format(timestamp, "yyyy-MM-dd HH:mm:ss");
-  $: timestamp_display = format(timestamp, "HH:mm dd/MM/yyyy");
+  let isFlip = $state(false);
 
-  $: card_qrcode = `W|${card_number}|${expire_date}|${timestamp_formatted}`;
+  let timestamp = $derived(new Date());
+  let timestamp_formatted = $derived(format(timestamp, "yyyy-MM-dd HH:mm:ss"));
+  let timestamp_display = $derived(format(timestamp, "HH:mm dd/MM/yyyy"));
+
+  let card_qrcode = $derived(
+    `W|${card_number}|${expire_date}|${timestamp_formatted}`,
+  );
 
   function flip() {
     const card = document.querySelector(".flip-card");
@@ -102,8 +106,8 @@
 
 <div
   class="flip-card"
-  on:click={flip}
-  on:keyup={flip}
+  onclick={flip}
+  onkeyup={flip}
   role="button"
   tabindex={0}
   aria-label="Flip Card"
@@ -132,7 +136,7 @@
         <div class="d-none d-md-block">
           <div class="row" style="position: relative;bottom: 270px;">
             <div class="col-6">
-              <canvas use:qrcode={{ value: card_qrcode, size: 150 }} />
+              <canvas use:qrcode={{ value: card_qrcode, size: 150 }}></canvas>
             </div>
             <div class="col-6">
               <div class="row">
@@ -145,7 +149,7 @@
                   width="160"
                   height="160"
                   style="width: 80px; height: 80px;"
-                />
+                ></canvas>
               </div>
             </div>
             <div class="row mt-2">
@@ -168,7 +172,7 @@
         <div class="d-block d-md-none">
           <div class="row" style="position: relative;bottom: 140px;">
             <div class="col-5 offset-1" style="height: 80px">
-              <canvas use:qrcode={{ value: card_qrcode, size: 80 }} />
+              <canvas use:qrcode={{ value: card_qrcode, size: 80 }}></canvas>
             </div>
             <div class="col-6">
               <div class="row">
@@ -181,7 +185,7 @@
                   width="80"
                   height="80"
                   style="width: 40px; height: 40px;"
-                />
+                ></canvas>
               </div>
             </div>
             <div class="row mt-2">

@@ -6,10 +6,11 @@ import "./styles/mymk.css";
 import "./styles/reset.css";
 
 import App from "./App.svelte";
+import { mount } from "svelte";
 
 injectSpeedInsights();
 injectAnalytics();
-const app = new App({
+const app = mount(App, {
   target: document.getElementById("app")!,
 });
 
