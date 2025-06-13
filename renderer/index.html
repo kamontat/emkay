@@ -4,7 +4,39 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+
+  <title>MyMK หน้าแรก</title>
+  <meta name="description" content="MK Restaurant Card App" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="google" content="notranslate" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@site" />
+  <meta name="twitter:title" content="eMKay" />
+  <meta name="twitter:description" content="MK Restaurant Card App" />
+  <meta name="twitter:url" content="https://thisismymk.kc.in.th" />
+  <meta name="twitter:image" content="/icons/splash-400.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="eMKay" />
+  <meta property="og:site_name" content="eMKay" />
+  <meta property="og:description" content="MK Restaurant Card App" />
+  <meta property="og:url" content="https://thisismymk.kc.in.th" />
+  <meta property="og:image" content="/icons/splash-400.png" />
+
+  <!-- Apple touch icon -->
+  <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon_120.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon_152.png" />
+  <link rel="apple-touch-icon" sizes="167x167" href="/icons/apple-touch-icon_167.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon_180.png" />
+
+  <link rel="preload" href="/manifest.json" />
+  <link rel="manifest" href="/manifest.json" />
+  <script async src="https://unpkg.com/pwacompat" crossOrigin="anonymous"></script>
 
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
@@ -20,12 +52,27 @@
 
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KNBXXCLZ" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KNBXXCLZ" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <div id="app"></div>
   <script type="module" src="/src/main.ts"></script>
+
+  <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker
+            .register("/sw.js")
+            .then((registration) => {
+              console.log("Service Worker registered successfully with scope:", registration.scope)
+            }).catch((error) => {
+              console.error("Service Worker registration failed:", error)
+            });
+        });
+      }
+  </script>
 </body>
 
 </html>
