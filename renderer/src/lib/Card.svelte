@@ -4,7 +4,7 @@
   import QRCode from "qrcode";
   import format from "date-fns/format";
 
-  import cardBlack from "../assets/card_black.jpg";
+  // import cardBlack from "../assets/card_black.jpg";
   import cardDiamond from "../assets/card_diamond.jpg";
   import cardBackside from "../assets/card_backside.png";
   import duckJump from "../assets/duck_jump.gif";
@@ -78,7 +78,7 @@
         if (time.remaining <= 100) {
           instance.reset().start();
         }
-      }
+      },
     );
   });
 
@@ -112,12 +112,22 @@
   <div class="flip-card-inner">
     <div class="flip-card-front">
       <div class="avatar mx-auto">
-        <img id="flip-front" src={cardDiamond} alt="diamond card" class="img-fluid" />
+        <img
+          id="flip-front"
+          src={cardDiamond}
+          alt="diamond card"
+          class="img-fluid"
+        />
       </div>
     </div>
     <div class="flip-card-back">
       <div class="avatar mx-auto back-card">
-        <img id="flip-back" src={cardBackside} alt="card back side" class="img-fluid" />
+        <img
+          id="flip-back"
+          src={cardBackside}
+          alt="card back side"
+          class="img-fluid"
+        />
 
         <div class="d-none d-md-block">
           <div class="row" style="position: relative;bottom: 270px;">
@@ -131,14 +141,21 @@
                 </div>
               </div>
               <div class="timecout-d" bind:this={countdown}>
-                <canvas width="160" height="160" style="width: 80px; height: 80px;" />
+                <canvas
+                  width="160"
+                  height="160"
+                  style="width: 80px; height: 80px;"
+                />
               </div>
             </div>
             <div class="row mt-2">
               <div class="col-6">{card_number}</div>
             </div>
             <div class="row">
-              <div class="col-12 text-center" style="position: absolute;bottom: -40px;font-size:14px;">
+              <div
+                class="col-12 text-center"
+                style="position: absolute;bottom: -40px;font-size:14px;"
+              >
                 ไม่รับ QR Code ที่ได้มาจากการ Screen Capture
               </div>
               <div class="text-end" style="position: relative;bottom: -10px;">
@@ -160,7 +177,11 @@
                 </div>
               </div>
               <div class="timecout-m" bind:this={countdown2}>
-                <canvas width="80" height="80" style="width: 40px; height: 40px;" />
+                <canvas
+                  width="80"
+                  height="80"
+                  style="width: 40px; height: 40px;"
+                />
               </div>
             </div>
             <div class="row mt-2">
@@ -169,10 +190,16 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-12" style="position: absolute;bottom: -7px;font-size:10px;">
+              <div
+                class="col-12"
+                style="position: absolute;bottom: -7px;font-size:10px;"
+              >
                 ไม่รับ QR Code ที่ได้มาจากการ Screen Capture
               </div>
-              <div class="text-end" style="position: relative;bottom: 5px;font-size:10px;">
+              <div
+                class="text-end"
+                style="position: relative;bottom: 5px;font-size:10px;"
+              >
                 <span>{timestamp_display}</span>
               </div>
             </div>
