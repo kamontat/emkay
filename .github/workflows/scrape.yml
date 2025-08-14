@@ -29,9 +29,7 @@ jobs:
           bundler-cache: true
           working-directory: ./scraper
       - name: Set up Playwright
-        ## Playwright > v1.53.0 failed with playwright-ruby-client
-        ## ref: https://github.com/YusukeIwaki/playwright-ruby-client/issues/335
-        run: npx playwright@1.52.0 install chromium-headless-shell
+        run: npx playwright install chromium-headless-shell
       - name: Scrape
         run: ruby main.rb
         env:
