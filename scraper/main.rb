@@ -70,9 +70,7 @@ def to_int(input)
   input.gsub(',', '').to_i
 end
 
-## Playwright > v1.53.0 failed with playwright-ruby-client
-## ref: https://github.com/YusukeIwaki/playwright-ruby-client/issues/335
-Playwright.create(playwright_cli_executable_path: 'npx playwright@1.52.0') do |playwright|
+Playwright.create(playwright_cli_executable_path: 'npx playwright') do |playwright|
   playwright.chromium.launch(headless: ENV.has_key?("CI")) do |browser|
     context = browser.new_context # Prepare new window.
     page = context.new_page # Open new window and new tab here. (about:blank)
