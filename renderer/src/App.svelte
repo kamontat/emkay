@@ -1,9 +1,4 @@
 <script lang="ts">
-  import logo from "./assets/logo.png";
-  import upDiamond from "./assets/up_diamond.png";
-  import Card from "./lib/Card.svelte";
-  import bg from "./assets/bg.png";
-  import addnew from "./assets/addnew.png";
   import {
     name,
     card_number,
@@ -14,9 +9,17 @@
     points_expire,
     points_expire_date,
   } from "../../scraper/data.json";
-  import format from "date-fns/format";
+  import logo from "./assets/logo.png";
+  import upDiamond from "./assets/up_diamond.png";
+  import bg from "./assets/bg.png";
+  import addnew from "./assets/addnew.png";
+
+  import { untrack } from "svelte";
+  import { format } from "date-fns/format";
+
   import MultitapButton from "./lib/MultitapButton.svelte";
   import DebugView from "./lib/DebugView.svelte";
+  import Card from "./lib/Card.svelte";
 
   const expire_date_display = format(new Date(expire_date), "dd/MM/yyyy");
   const points_expire_date_display = format(
@@ -33,6 +36,7 @@
   const env = import.meta.env.VITE_VERCEL_ENV;
 
   $effect(() => {
+    console.log("on:title");
     if (mode === "production" && env === "production") {
       title = _title;
     } else if (mode === "production") {
@@ -40,8 +44,10 @@
     } else {
       title = `[${mode}] ` + _title;
     }
+
     if (isDebug) {
-      title += " (debug)";
+      const previous = untrack(() => title);
+      title = `${previous} (debug)`;
     }
   });
 </script>
@@ -462,12 +468,13 @@
         </div>
       </div>
       <div class="d-flex justify-content-center footer-font mt-2">
-        <span
-          >© 2019 <MultitapButton
-            times={2}
-            on:multitap={() => (isDebug = !isDebug)}>MK</MultitapButton
-          > Restaurants Group PCL., All rights reserved.</span
-        >
+        <span>
+          © 2019
+          <MultitapButton times={2} onMultitap={() => (isDebug = !isDebug)}>
+            MK
+          </MultitapButton>
+          Restaurants Group PCL., All rights reserved.
+        </span>
       </div>
     </div>
   </footer>
