@@ -1,19 +1,16 @@
 <script lang="ts">
-  import { createEventDispatcher } from "svelte";
-
   interface Props {
     /** how many times for multitap event to execute */
     times: number;
     /** max time different in milliseconds each click need to be */
     delay?: number;
-    children?: import('svelte').Snippet;
+    onMultitap?: (count: number) => void;
+    onReset?: () => void;
+    children?: import("svelte").Snippet;
   }
 
-  let { times, delay = 450, children }: Props = $props();
+  let { times, delay = 450, onMultitap, onReset, children }: Props = $props();
 
-  const EVENT_MULTITAP_NAME = "multitap";
-  const EVENT_RESET_NAME = "reset";
-  const dispatch = createEventDispatcher();
   let previous = -1;
   let count = 0;
 
@@ -23,7 +20,7 @@
 
     const diff = now - previous;
     if (diff > delay) {
-      dispatch(EVENT_RESET_NAME);
+      onReset?.();
       reset();
     }
 
@@ -31,9 +28,7 @@
     previous = Date.now();
 
     if (count >= times) {
-      dispatch(EVENT_MULTITAP_NAME, {
-        count,
-      });
+      onMultitap?.(count);
       reset();
     }
   };
