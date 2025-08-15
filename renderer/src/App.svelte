@@ -36,7 +36,6 @@
   const env = import.meta.env.VITE_VERCEL_ENV;
 
   $effect(() => {
-    console.log("on:title");
     if (mode === "production" && env === "production") {
       title = _title;
     } else if (mode === "production") {
