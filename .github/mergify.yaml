@@ -34,15 +34,6 @@ pull_request_rules:
       - author=kamontat
     actions:
       queue:
-  - name: Queue the pull requests for dependabot
-    description: Queue dependabot pull requests when CI is success
-    conditions:
-      - -draft
-      - -closed
-      - -conflict
-      - author=dependabot[bot]
-    actions:
-      queue:
   - name: Queue the pull requests for contributors
     description: Queue pull requests when CI is success and reviewed
     conditions:
@@ -52,6 +43,15 @@ pull_request_rules:
       - approved-reviews-by=kamontat
     actions:
       queue:
+  # - name: Queue the pull requests for dependabot
+  #   description: Queue dependabot pull requests when CI is success
+  #   conditions:
+  #     - -draft
+  #     - -closed
+  #     - -conflict
+  #     - author=dependabot[bot]
+  #   actions:
+  #     queue:
 
 queue_rules:
   - name: default
