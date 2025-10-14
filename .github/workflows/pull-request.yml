@@ -39,9 +39,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Set up Pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v4
+        with:
+          package_json_file: renderer/package.json
       - name: Set up NodeJS
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: renderer/.tool-versions
+          cache-dependency-path: renderer/pnpm-lock.yaml
+          cache: pnpm
       - name: Install dependencies
         run: pnpm install
       - name: Build package
