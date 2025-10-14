@@ -1,0 +1,48 @@
+name: pull-request
+
+on:
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    defaults:
+      run:
+        working-directory: ./scraper
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up NodeJS
+        uses: actions/setup-node@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+          working-directory: ./scraper
+      - name: Set up Playwright
+        run: npx playwright install chromium-headless-shell
+      - name: Scrape
+        run: ruby main.rb
+        env:
+          MK_USERNAME: ${{ secrets.MK_USERNAME }}
+          MK_PASSWORD: ${{ secrets.MK_PASSWORD }}
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./renderer
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Pnpm
+        uses: pnpm/action-setup@v2
+      - name: Set up NodeJS
+        uses: actions/setup-node@v4
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build package
+        run: pnpm build
