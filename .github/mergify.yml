@@ -34,6 +34,17 @@ pull_request_rules:
       - author=kamontat
     actions:
       queue:
+  - name: Ask for review the dependabot pull requests
+    description: Automatically ask maintainer to review dependabot pull requests
+    conditions:
+      - -draft
+      - -closed
+      - -conflict
+      - author=dependabot[bot]
+    actions:
+      request_reviews:
+        users:
+          - kamontat
   - name: Queue the dependabot pull requests
     description: Automatically queue dependabot pull requests when reviewed
     conditions:
