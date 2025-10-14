@@ -35,12 +35,13 @@ pull_request_rules:
     actions:
       queue:
   - name: Queue the dependabot pull requests
-    description: Automatically queue dependabot pull requests
+    description: Automatically queue dependabot pull requests when reviewed
     conditions:
       - -draft
       - -closed
       - -conflict
       - author=dependabot[bot]
+      - approved-reviews-by=kamontat
     actions:
       queue:
   - name: Queue the contributors pull requests
