@@ -23,7 +23,7 @@ importers:
     devDependencies:
       '@sveltejs/vite-plugin-svelte':
         specifier: 6.2.1
-        version: 6.2.1(svelte@5.41.2)(vite@7.1.10)
+        version: 6.2.1(svelte@5.41.2)(vite@7.1.12)
       '@tsconfig/svelte':
         specifier: 5.0.5
         version: 5.0.5
@@ -43,8 +43,8 @@ importers:
         specifier: 5.9.3
         version: 5.9.3
       vite:
-        specifier: 7.1.10
-        version: 7.1.10
+        specifier: 7.1.12
+        version: 7.1.12
 
 packages:
 
@@ -634,8 +634,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  vite@7.1.10:
-    resolution: {integrity: sha512-CmuvUBzVJ/e3HGxhg6cYk88NGgTnBoOo7ogtfJJ0fefUWAxN/WDSUa50o+oVBxuIhO8FoEZW0j2eW7sfjs5EtA==}
+  vite@7.1.12:
+    resolution: {integrity: sha512-ZWyE8YXEXqJrrSLvYgrRP7p62OziLW7xI5HYGWFzOvupfAlrLvURSzv/FyGyy0eidogEM3ujU+kUG1zuHgb6Ug==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
@@ -872,24 +872,24 @@ snapshots:
     dependencies:
       acorn: 8.15.0
 
-  '@sveltejs/vite-plugin-svelte-inspector@5.0.1(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.41.2)(vite@7.1.10))(svelte@5.41.2)(vite@7.1.10)':
+  '@sveltejs/vite-plugin-svelte-inspector@5.0.1(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.41.2)(vite@7.1.12))(svelte@5.41.2)(vite@7.1.12)':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 6.2.1(svelte@5.41.2)(vite@7.1.10)
+      '@sveltejs/vite-plugin-svelte': 6.2.1(svelte@5.41.2)(vite@7.1.12)
       debug: 4.4.3
       svelte: 5.41.2
-      vite: 7.1.10
+      vite: 7.1.12
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.41.2)(vite@7.1.10)':
+  '@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.41.2)(vite@7.1.12)':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 5.0.1(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.41.2)(vite@7.1.10))(svelte@5.41.2)(vite@7.1.10)
+      '@sveltejs/vite-plugin-svelte-inspector': 5.0.1(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.41.2)(vite@7.1.12))(svelte@5.41.2)(vite@7.1.12)
       debug: 4.4.3
       deepmerge: 4.3.1
       magic-string: 0.30.19
       svelte: 5.41.2
-      vite: 7.1.10
-      vitefu: 1.1.1(vite@7.1.10)
+      vite: 7.1.12
+      vitefu: 1.1.1(vite@7.1.12)
     transitivePeerDependencies:
       - supports-color
 
@@ -1144,7 +1144,7 @@ snapshots:
 
   typescript@5.9.3: {}
 
-  vite@7.1.10:
+  vite@7.1.12:
     dependencies:
       esbuild: 0.25.11
       fdir: 6.5.0(picomatch@4.0.3)
@@ -1155,9 +1155,9 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  vitefu@1.1.1(vite@7.1.10):
+  vitefu@1.1.1(vite@7.1.12):
     optionalDependencies:
-      vite: 7.1.10
+      vite: 7.1.12
 
   which-module@2.0.1: {}
 
