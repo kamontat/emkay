@@ -21,7 +21,7 @@ jobs:
         working-directory: ./scraper
     steps:
       - name: Set up repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           ssh-key: ${{ secrets.DEPLOY_KEY }}
       - name: Set up NodeJS
