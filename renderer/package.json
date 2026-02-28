@@ -19,7 +19,7 @@
     "@sveltejs/vite-plugin-svelte": "6.2.4",
     "@tsconfig/svelte": "5.0.7",
     "canvas-circular-countdown": "1.8.0",
-    "svelte": "5.50.0",
+    "svelte": "5.53.2",
     "svelte-check": "4.3.6",
     "tslib": "2.8.1",
     "typescript": "5.9.3",
