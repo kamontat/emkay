@@ -39,7 +39,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Set up Pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v5
         with:
           package_json_file: renderer/package.json
       - name: Set up NodeJS
