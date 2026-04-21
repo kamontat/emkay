@@ -20,8 +20,11 @@ jobs:
         uses: jdx/mise-action@1648a7812b9aeae629881980618f079932869151 # v4.0.1
         with:
           working_directory: ./scraper
-      - name: Install Ruby dependencies
-        run: bundle install
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@7372622e62b60b3cb750dcd2b9e32c247ffec26a # v1.302.0
+        with:
+          bundler-cache: true
+          working-directory: ./scraper
       - name: Set up Playwright
         run: npx playwright install chromium-headless-shell
       - name: Scrape
