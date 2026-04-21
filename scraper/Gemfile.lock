@@ -71,6 +71,7 @@ PLATFORMS
   arm64-darwin-22
   arm64-darwin-23
   arm64-darwin-24
+  arm64-darwin-25
   x86_64-linux
 
 DEPENDENCIES
@@ -80,4 +81,4 @@ DEPENDENCIES
   rubocop
 
 BUNDLED WITH
-   2.5.22
+   4.0.10
