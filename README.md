@@ -8,6 +8,7 @@ Share your member card without hassle
 
 - Install Ruby and Nodejs (version matches **.tool-versions**)
 - Create **.env** file or set up environment `MK_USERNAME` and `MK_PASSWORD`
+  - `source .env` && `export MK_PASSWORD MK_USERNAME`
 
 ## Scraper
 
