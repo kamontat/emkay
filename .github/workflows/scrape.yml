@@ -21,16 +21,15 @@ jobs:
         working-directory: ./scraper
     steps:
       - name: Set up repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           ssh-key: ${{ secrets.DEPLOY_KEY }}
-      - name: Set up NodeJS
-        uses: actions/setup-node@v6
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+      - name: Set up runtimes
+        uses: jdx/mise-action@1648a7812b9aeae629881980618f079932869151 # v4.0.1
         with:
-          bundler-cache: true
-          working-directory: ./scraper
+          working_directory: ./scraper
+      - name: Install Ruby dependencies
+        run: bundle install
       - name: Set up Playwright
         run: npx playwright install chromium-headless-shell
       - name: Scrape
