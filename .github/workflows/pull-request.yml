@@ -45,7 +45,8 @@ jobs:
         uses: pnpm/action-setup@a15d269cd4658e1107c09f1fabf4cbd7bd1f308a # v4.4.0
         with:
           package_json_file: renderer/package.json
-      - name: Install dependencies
-        run: pnpm install
+          cache_dependency_path: renderer/pnpm-lock.yaml
+          run_install: true
+          cache: true
       - name: Build package
         run: pnpm build
