@@ -4,16 +4,10 @@ updates:
     directory: /
     schedule:
       interval: weekly
-    commit-message:
-      prefix: perf
-      include: scope
   - package-ecosystem: npm
     directory: /renderer
     schedule:
       interval: weekly
-    commit-message:
-      prefix: perf
-      include: scope
     groups:
       patch:
         update-types:
@@ -22,6 +16,3 @@ updates:
     directory: /scraper
     schedule:
       interval: weekly
-    commit-message:
-      include: scope
-      prefix: pref
