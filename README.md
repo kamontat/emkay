@@ -2,7 +2,7 @@
 
 Share your member card without hassle
 
-![image](https://github.com/kamontat/emkay/assets/14089557/527da690-9d6f-494e-8fe6-74ca2340998a)
+![image](https://github.com/user-attachments/assets/93b2930b-fae4-4a5a-b3ea-c885eea4cbc0)
 
 ## Prerequisites
 
