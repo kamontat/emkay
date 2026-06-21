@@ -179,4 +179,4 @@ queue_rules:
     merge_method: squash
     branch_protection_injection_mode: merge
     update_method: rebase
-    update_bot_account: mergify[bot]
+    update_bot_account: kamontat
