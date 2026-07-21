@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@vercel/analytics':
         specifier: 2.0.1
-        version: 2.0.1(svelte@5.56.4(@typescript-eslint/types@8.57.2))
+        version: 2.0.1(svelte@5.56.7(@typescript-eslint/types@8.57.2))
       '@vercel/speed-insights':
         specifier: 2.0.0
-        version: 2.0.0(svelte@5.56.4(@typescript-eslint/types@8.57.2))
+        version: 2.0.0(svelte@5.56.7(@typescript-eslint/types@8.57.2))
       date-fns:
         specifier: 4.4.0
         version: 4.4.0
@@ -23,7 +23,7 @@ importers:
     devDependencies:
       '@sveltejs/vite-plugin-svelte':
         specifier: 6.2.4
-        version: 6.2.4(svelte@5.56.4(@typescript-eslint/types@8.57.2))(vite@7.3.1)
+        version: 6.2.4(svelte@5.56.7(@typescript-eslint/types@8.57.2))(vite@7.3.1)
       '@tsconfig/svelte':
         specifier: 5.0.8
         version: 5.0.8
@@ -31,11 +31,11 @@ importers:
         specifier: 1.8.0
         version: 1.8.0
       svelte:
-        specifier: 5.56.4
-        version: 5.56.4(@typescript-eslint/types@8.57.2)
+        specifier: 5.56.7
+        version: 5.56.7(@typescript-eslint/types@8.57.2)
       svelte-check:
-        specifier: 4.7.2
-        version: 4.7.2(picomatch@4.0.3)(svelte@5.56.4(@typescript-eslint/types@8.57.2))(typescript@6.0.3)
+        specifier: 4.7.3
+        version: 4.7.3(picomatch@4.0.3)(svelte@5.56.7(@typescript-eslint/types@8.57.2))(typescript@6.0.3)
       tslib:
         specifier: 2.8.1
         version: 2.8.1
@@ -510,8 +510,8 @@ packages:
     resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
     engines: {node: '>=0.10.0'}
 
-  devalue@5.8.1:
-    resolution: {integrity: sha512-4CXDYRBGqN+57wVJkuXBYmpAVUSg3L6JAQa/DFqm238G73E1wuyc/JhGQJzN7vUf/CMphYau2zXbfWzDR5aTEw==}
+  devalue@5.8.2:
+    resolution: {integrity: sha512-DObPPAfdtFbXjxLqK8s2Xk9ZuWz5+ZoFEhC7J76es4GU/rEiXwHTmbImoCdyoCOcBH1UF3+Cz6Z2sYD4hyl5TA==}
 
   dijkstrajs@1.0.3:
     resolution: {integrity: sha512-qiSlmBq9+BCdCA/L46dw8Uy93mloxsPSbwnm5yrKn2vMPiy8KyAskTF6zuV/j5BMsmOGZDPs7KjU+mjb670kfA==}
@@ -527,8 +527,8 @@ packages:
   esm-env@1.2.2:
     resolution: {integrity: sha512-Epxrv+Nr/CaL4ZcFGPJIYLWFom+YeV1DqMLHJoEd9SYRxNbaFruBwfEX/kkHUJf55j2+TUbmDcmuilbP1TmXHA==}
 
-  esrap@2.2.13:
-    resolution: {integrity: sha512-m8jH5hZgJE2RRUK/jjkGPcJEDAV+dYnZYFkosQaPTcE+Yw4xynXHOo6FUdwaWBtdR3b1MMa7wEDTSHeR2VWsGA==}
+  esrap@2.3.0:
+    resolution: {integrity: sha512-GQ/7RN8uOtEfNpzZzBMTzW9JBcX42oaSVtPzdF+6cEL8pqIL094iUpr9jzYGn4O4P/1S60dJ6izyT8F4LYARng==}
     peerDependencies:
       '@typescript-eslint/types': ^8.2.0
     peerDependenciesMeta:
@@ -657,16 +657,16 @@ packages:
     resolution: {integrity: sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==}
     engines: {node: '>=8'}
 
-  svelte-check@4.7.2:
-    resolution: {integrity: sha512-GoS4XJdGswlq0rIT1vtFLzJY1bvHtY37McY9H9Gkm1Ggw/ICdZYn8J/Z8Yi0BEL0i3R4+jtaWVePjyppMlij/A==}
+  svelte-check@4.7.3:
+    resolution: {integrity: sha512-DHdTCGX62R0fCxBEaT+USdASAnoaRBaaNczkRJl0K7o3WyoCeVUbVxo6fKqpOll/B+WMWCsiFK0eFrJSNBKZIg==}
     engines: {node: '>= 18.0.0'}
     hasBin: true
     peerDependencies:
       svelte: ^4.0.0 || ^5.0.0-next.0
       typescript: '>=5.0.0'
 
-  svelte@5.56.4:
-    resolution: {integrity: sha512-/d0QHehmRuJW8gVz395MTkPcPozxzdjBMBE8oEYGz8O3b9KTMzzQ9ZHJQLuFKOHOPQbU6kx/X4iid/EBBzH7iw==}
+  svelte@5.56.7:
+    resolution: {integrity: sha512-5qERUZX80oQj6XrDMUmD2Uhd/cIpCPDWWKBK3ZHmyRUC9apPyamWM8xMo31mbWsIQxwG2hVoSnOJ/EcnhVkkzQ==}
     engines: {node: '>=18'}
 
   tinyglobby@0.2.15:
@@ -930,20 +930,20 @@ snapshots:
 
   '@sveltejs/load-config@0.2.0': {}
 
-  '@sveltejs/vite-plugin-svelte-inspector@5.0.2(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.56.4(@typescript-eslint/types@8.57.2))(vite@7.3.1))(svelte@5.56.4(@typescript-eslint/types@8.57.2))(vite@7.3.1)':
+  '@sveltejs/vite-plugin-svelte-inspector@5.0.2(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.56.7(@typescript-eslint/types@8.57.2))(vite@7.3.1))(svelte@5.56.7(@typescript-eslint/types@8.57.2))(vite@7.3.1)':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 6.2.4(svelte@5.56.4(@typescript-eslint/types@8.57.2))(vite@7.3.1)
+      '@sveltejs/vite-plugin-svelte': 6.2.4(svelte@5.56.7(@typescript-eslint/types@8.57.2))(vite@7.3.1)
       obug: 2.1.1
-      svelte: 5.56.4(@typescript-eslint/types@8.57.2)
+      svelte: 5.56.7(@typescript-eslint/types@8.57.2)
       vite: 7.3.1
 
-  '@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.56.4(@typescript-eslint/types@8.57.2))(vite@7.3.1)':
+  '@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.56.7(@typescript-eslint/types@8.57.2))(vite@7.3.1)':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 5.0.2(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.56.4(@typescript-eslint/types@8.57.2))(vite@7.3.1))(svelte@5.56.4(@typescript-eslint/types@8.57.2))(vite@7.3.1)
+      '@sveltejs/vite-plugin-svelte-inspector': 5.0.2(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.56.7(@typescript-eslint/types@8.57.2))(vite@7.3.1))(svelte@5.56.7(@typescript-eslint/types@8.57.2))(vite@7.3.1)
       deepmerge: 4.3.1
       magic-string: 0.30.21
       obug: 2.1.1
-      svelte: 5.56.4(@typescript-eslint/types@8.57.2)
+      svelte: 5.56.7(@typescript-eslint/types@8.57.2)
       vite: 7.3.1
       vitefu: 1.1.1(vite@7.3.1)
 
@@ -958,13 +958,13 @@ snapshots:
   '@typescript-eslint/types@8.57.2':
     optional: true
 
-  '@vercel/analytics@2.0.1(svelte@5.56.4(@typescript-eslint/types@8.57.2))':
+  '@vercel/analytics@2.0.1(svelte@5.56.7(@typescript-eslint/types@8.57.2))':
     optionalDependencies:
-      svelte: 5.56.4(@typescript-eslint/types@8.57.2)
+      svelte: 5.56.7(@typescript-eslint/types@8.57.2)
 
-  '@vercel/speed-insights@2.0.0(svelte@5.56.4(@typescript-eslint/types@8.57.2))':
+  '@vercel/speed-insights@2.0.0(svelte@5.56.7(@typescript-eslint/types@8.57.2))':
     optionalDependencies:
-      svelte: 5.56.4(@typescript-eslint/types@8.57.2)
+      svelte: 5.56.7(@typescript-eslint/types@8.57.2)
 
   acorn@8.17.0: {}
 
@@ -1006,7 +1006,7 @@ snapshots:
 
   deepmerge@4.3.1: {}
 
-  devalue@5.8.1: {}
+  devalue@5.8.2: {}
 
   dijkstrajs@1.0.3: {}
 
@@ -1043,7 +1043,7 @@ snapshots:
 
   esm-env@1.2.2: {}
 
-  esrap@2.2.13(@typescript-eslint/types@8.57.2):
+  esrap@2.3.0(@typescript-eslint/types@8.57.2):
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
     optionalDependencies:
@@ -1170,7 +1170,7 @@ snapshots:
     dependencies:
       ansi-regex: 5.0.1
 
-  svelte-check@4.7.2(picomatch@4.0.3)(svelte@5.56.4(@typescript-eslint/types@8.57.2))(typescript@6.0.3):
+  svelte-check@4.7.3(picomatch@4.0.3)(svelte@5.56.7(@typescript-eslint/types@8.57.2))(typescript@6.0.3):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       '@sveltejs/load-config': 0.2.0
@@ -1178,12 +1178,12 @@ snapshots:
       fdir: 6.5.0(picomatch@4.0.3)
       picocolors: 1.1.1
       sade: 1.8.1
-      svelte: 5.56.4(@typescript-eslint/types@8.57.2)
+      svelte: 5.56.7(@typescript-eslint/types@8.57.2)
       typescript: 6.0.3
     transitivePeerDependencies:
       - picomatch
 
-  svelte@5.56.4(@typescript-eslint/types@8.57.2):
+  svelte@5.56.7(@typescript-eslint/types@8.57.2):
     dependencies:
       '@jridgewell/remapping': 2.3.5
       '@jridgewell/sourcemap-codec': 1.5.5
@@ -1194,9 +1194,9 @@ snapshots:
       aria-query: 5.3.1
       axobject-query: 4.1.0
       clsx: 2.1.1
-      devalue: 5.8.1
+      devalue: 5.8.2
       esm-env: 1.2.2
-      esrap: 2.2.13(@typescript-eslint/types@8.57.2)
+      esrap: 2.3.0(@typescript-eslint/types@8.57.2)
       is-reference: 3.0.3
       locate-character: 3.0.0
       magic-string: 0.30.21
