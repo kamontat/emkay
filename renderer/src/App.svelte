@@ -177,76 +177,6 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="offcanvas-body">
-            <ul
-              class="navbar-nav justify-content-end flex-grow-1 pe-3 text-center"
-            >
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#th/home"
-                  >หน้าแรก</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#th/profile">ข้อมูลส่วนตัว</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#th/order-history"
-                  >ประวัติการซื้อบัตรสมาชิก</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#th/change-password"
-                  >เปลี่ยนรหัสผ่าน</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="https://www.mkrestaurant.com/th/card"
-                  target="_blank">ประเภทบัตรสมาชิก MK</a
-                >
-              </li>
-
-              <li class="nav-item d-block d-sm-none d-sm-block d-md-none">
-                <a class="nav-link" aria-current="page" href="#th/contact"
-                  >ติดต่อเรา</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#th/logout"
-                  >ลงชื่อออก</a
-                >
-                <form
-                  id="logout-form"
-                  action="#th/logout"
-                  method="POST"
-                  class="d-none"
-                >
-                  <input
-                    name="_token"
-                    type="hidden"
-                    value="s1FyH3i7F6g5zr8Hm7BLw63SRJUqZO28TCi7ZMTC"
-                  />
-                </form>
-              </li>
-
-              <li
-                class="nav-item d-block d-sm-none d-sm-block d-md-none d-flex justify-content-center py-5"
-              >
-                <div class="col-2">
-                  <hr style="height: 2px; margin:0px;" />
-                </div>
-              </li>
-
-              <li class="nav-item d-block d-sm-none d-sm-block d-md-none">
-                <span class="nav-link">
-                  <a aria-current="page" href="#th/home">TH</a>
-                  |
-                  <a aria-current="page" href="#en/home">EN</a>
-                </span>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
     </nav>
@@ -265,22 +195,6 @@
             data-bs-ride="carousel"
             data-bs-interval="false"
           >
-            <div class="carousel-indicators">
-              <button
-                type="button"
-                data-bs-target="#carouselCard"
-                data-bs-slide-to="0"
-                class="active"
-                aria-current="true"
-                aria-label="Slide 1"
-              ></button>
-              <button
-                type="button"
-                data-bs-target="#carouselCard"
-                data-bs-slide-to="1"
-                aria-label="Slide 2"
-              ></button>
-            </div>
             <div class="carousel-inner">
               <div class="carousel-item w-100 active">
                 <div class="row text-center">
@@ -364,18 +278,6 @@
                         <div class="mt-2">
                           <h4>{name}</h4>
                         </div>
-                        <ul class="list-inline mt-3">
-                          <li class="list-inline-item p-divider">
-                            <a href="#my-coupon" class="h5 text-success"
-                              >คูปองของฉัน
-                            </a>
-                          </li>
-                          <li class="list-inline-item">
-                            <a href="#redeem" class="h5 text-success"
-                              >แลกคะแนนสะสม
-                            </a>
-                          </li>
-                        </ul>
 
                         <div
                           class="mx-auto detail-profile"
@@ -421,13 +323,6 @@
                           >
                             แก้ไขข้อมูลส่วนตัว
                           </a>
-                          <a
-                            class="btn btn-back history"
-                            style="margin-right: 5px;"
-                            href="#history"
-                          >
-                            ประวัติการใช้งาน
-                          </a>
                         </div>
                       </div>
                     </div>
@@ -453,27 +348,6 @@
                 </div>
               </div>
             </div>
-
-            <button
-              class="carousel-control-prev"
-              type="button"
-              data-bs-target="#carouselCard"
-              data-bs-slide="prev"
-            >
-              <span class="carousel-control-prev-icon" aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button
-              class="carousel-control-next"
-              type="button"
-              data-bs-target="#carouselCard"
-              data-bs-slide="next"
-            >
-              <span class="carousel-control-next-icon" aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Next</span>
-            </button>
           </div>
           <!-- End carouselCard-->
         </div>
