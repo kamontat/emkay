@@ -21,12 +21,12 @@ GEM
     mime-types (3.7.0)
       logger
       mime-types-data (~> 3.2025, >= 3.2025.0507)
-    mime-types-data (3.2026.1013)
+    mime-types-data (3.2026.1103)
     parallel (2.3.0)
     parser (3.3.13.0)
       ast (~> 2.4.1)
       racc
-    playwright-ruby-client (1.64.0)
+    playwright-ruby-client (1.65.0)
       base64
       concurrent-ruby (>= 1.1.6)
       mime-types (>= 3.0)
